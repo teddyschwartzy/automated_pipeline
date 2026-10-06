@@ -131,9 +131,9 @@ Through a combination of correlation heatmaps and model feature importance analy
 ### Model Performance
 The pipeline compared three different architectural approaches: Linear (Logistic Regression), Non-Linear Single Tree (Decision Tree), and Non-Linear Ensemble (Random Forest).
 
-#### Top Performer: The Random Forest Classifier produced the strongest overall performance, achieving the highest ROC AUC and the best balance between Precision and Recall.
-#### Comparative Insight: While Logistic Regression provided a strong baseline, the Random Forest's ability to handle non-linear relationships resulted in a curve that bowed furthest toward the top-left of the ROC plot, indicating superior sensitivity and specificity.
-#### Model Stability: The Decision Tree showed the highest variance, confirming that an ensemble approach (Random Forest) is necessary to reduce overfitting for this specific clinical dataset.
+**Top Performer:** The Random Forest Classifier produced the strongest overall performance, achieving the highest ROC AUC and the best balance between Precision and Recall.
+**Comparative Insight:** While Logistic Regression provided a strong baseline, the Random Forest's ability to handle non-linear relationships resulted in a curve that bowed furthest toward the top-left of the ROC plot, indicating superior sensitivity and specificity.
+**Model Stability:** The Decision Tree showed the highest variance, confirming that an ensemble approach (Random Forest) is necessary to reduce overfitting for this specific clinical dataset.
 
 ---
 
