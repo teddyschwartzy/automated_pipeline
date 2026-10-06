@@ -111,23 +111,12 @@ The workflow follows the structure below:
 
 To demonstrate understanding of the automated workflow, the following modifications were implemented:
 
-### Modification 1: Adaptive Imputation Logic
-
-The original workflow used a fixed median-imputation strategy.
-
-The notebook was modified to automatically select either mean or median imputation based on the overall proportion of missing data in the training set. This extends the notebook's conditional decision-making process and makes preprocessing more adaptive.
-
-### Modification 2: Random Forest Classification Model
-
-A Random Forest classifier was added to the existing machine learning workflow.
-
-This provided an additional supervised learning model for comparison against Logistic Regression and Decision Tree models and allowed evaluation of ensemble-based classification performance.
-
-### Modification 3: ROC Curve Comparison Visualization
-
-A comparative ROC visualization was added to display the predictive performance of all models on the same figure.
-
-This enhancement improves interpretability and simplifies model comparison.
+- Automated Data Validation: Added a guardrail to verify that all required columns are present upon upload, preventing runtime errors.
+- Feature Correlation Analysis: Integrated a correlation heatmap to visualize the relationship between biological markers (e.g., Glucose, BMI) and the target outcome.
+- Adaptive Imputation Strategy: Implemented conditional logic that automatically switches between Mean and Median imputation based on the dataset's missingness rate.
+- Random Forest Addition: Expanded the ML suite by adding a Random Forest Classifier to compare ensemble performance against linear and single-tree models.
+- Consolidated Performance Benchmarking: Created a unified comparison table sorted by ROC AUC for efficient model selection.
+- Model Diagnostics (ROC Curves): Integrated ROC curve visualizations to evaluate the trade-off between sensitivity and specificity across all classification thresholds.
 
 ---
 
@@ -171,44 +160,15 @@ phik
 
 ## Running the Analysis
 
-### Option 1: Google Colab
+### Open the Notebook: Click the link below or open the .ipynb file in Google Colab.
 
-Click the badge below:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1-owFIoktTtmlKcHyTtSQpGGmBgiMvVSe?usp=sharing)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svgHERE)
+### Execute Cells: Run the cells sequentially from top to bottom.
 
-1. Open the notebook in Colab.
-2. Upload the dataset when prompted.
-3. Run all notebook cells from top to bottom.
-4. Review generated outputs, visualizations, and model results.
+### Upload Data: When prompted by the upload widget in the first block, upload the diabetes data .CSV file.
 
-### Option 2: Local Execution
-
-Clone the repository:
-
-```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-```
-
-Navigate to the project folder:
-
-```bash
-cd YOUR_REPOSITORY
-```
-
-Install required dependencies:
-
-```bash
-pip install pandas numpy matplotlib seaborn scipy statsmodels scikit-learn phik
-```
-
-Launch Jupyter Notebook:
-
-```bash
-jupyter notebook
-```
-
-Open the notebook and execute all cells sequentially.
+### Review Outputs: The pipeline will automatically handle cleaning, imputation, training, and evaluation, ending with the Comparison Table and ROC Curve.
 
 ---
 
