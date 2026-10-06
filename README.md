@@ -90,7 +90,7 @@ The workflow follows the structure below:
 7. Machine Learning
    - Logistic Regression
    - Decision Tree
-   - Random Forest (added modification)
+   - Random Forest
 
 8. Model Evaluation
    - Confusion matrices
