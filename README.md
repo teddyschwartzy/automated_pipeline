@@ -122,22 +122,18 @@ To demonstrate understanding of the automated workflow, the following modificati
 
 ## Key Findings
 
-Several variables demonstrated meaningful relationships with diabetes status, particularly:
+### Predictor Analysis
+Through a combination of correlation heatmaps and model feature importance analysis, several variables were identified as having a strong relationship with diabetes status:
+- Glucose: The most significant predictor across all models.
+- BMI & Age: Demonstrated strong positive correlations with the outcome.
+- Insulin: Showed meaningful influence, although it had a higher rate of missing values.
 
-- Glucose
-- BMI
-- Insulin
-- Age
+### Model Performance
+The pipeline compared three different architectural approaches: Linear (Logistic Regression), Non-Linear Single Tree (Decision Tree), and Non-Linear Ensemble (Random Forest).
 
-Among the evaluated models, Logistic Regression produced the strongest overall performance, achieving the highest ROC AUC and better overall classification metrics than the Decision Tree model.
-
-Feature importance analysis from the tuned Decision Tree identified:
-
-1. Glucose
-2. BMI
-3. Age
-
-as the most influential predictors within the model.
+#### Top Performer: The Random Forest Classifier produced the strongest overall performance, achieving the highest ROC AUC and the best balance between Precision and Recall.
+#### Comparative Insight: While Logistic Regression provided a strong baseline, the Random Forest's ability to handle non-linear relationships resulted in a curve that bowed furthest toward the top-left of the ROC plot, indicating superior sensitivity and specificity.
+#### Model Stability: The Decision Tree showed the highest variance, confirming that an ensemble approach (Random Forest) is necessary to reduce overfitting for this specific clinical dataset.
 
 ---
 
